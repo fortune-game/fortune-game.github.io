@@ -164,11 +164,13 @@
                 mi = 1;
                 document.getElementById("countingRound").innerHTML = 'รอบที่ <span class="hr4">' + mr + '</span>/3';
                 document.getElementById("countingImg").innerHTML = 'ครั้งที่ <span class="hr5">' + mi + '</span>/10';
-                Swal.fire(
-                    'ท่านทายถูก ' + point + "/10",
-                    'เล่นเกมอีกครั้ง',
-                    'success'
-                )
+                Swal.fire({
+                    title: 'ท่านทายถูก ' + point + "/10",
+                    text: "เล่นเกมใหม่อีกครั้ง",
+                    icon: 'success',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'ตกลง'
+                    })
                 
                 
             }else if(mi == maxImg && mr == maxRound){
@@ -176,17 +178,17 @@
                 $('#titlescore').hide();
                 Swal.fire({
                     title: 'ท่านทายถูก ' + point + "/10",
-                    text: "เล่นเกมใหม่อีกครั้ง",
                     icon: 'success',
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'ตกลง'
                     }).then((result) => {
                    
-                        Swal.fire(
-                        'จบเกม!',
-                        '',
-                        'warning'
-                        )
+                        Swal.fire({
+                        title: 'จบเกม!', 
+                        icon: 'warning',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'ตกลง'
+                        })
                         
                         setTimeout(function () {
                         window.location.href = "index.html"; 
